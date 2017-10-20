@@ -36,6 +36,7 @@ public class IndexController {
 
 	@RequestMapping("/")
 	public String index() {
+		System.out.println("");
 		return "upload.html";
 	}
 
@@ -63,7 +64,7 @@ public class IndexController {
 			File convertedFile = convert(file);
 
 			blob.upload(new FileInputStream(convertedFile), convertedFile.length());
-
+			System.out.println(blob.getUri());
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "Upload Failed";
