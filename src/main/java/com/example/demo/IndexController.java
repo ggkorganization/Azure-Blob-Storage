@@ -6,7 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -43,9 +42,7 @@ public class IndexController {
 	@RequestMapping("/getCount")
 	@ResponseBody
 	public String getCount() {
-		List<Customer> listOfCustomers = customerService.getAllCustomers();
-		System.out.println(listOfCustomers.size());
-		return Integer.toString(listOfCustomers.size());
+		return Integer.toString(10);
 	}
 
 	@RequestMapping("/uploadImage")
