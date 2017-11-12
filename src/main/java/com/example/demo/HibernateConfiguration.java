@@ -22,7 +22,7 @@ public class HibernateConfiguration {
 	private String PASSWORD = "AravindReddy0713";
 
 	// @Value("jdbc:sqlserver://ARUN-HP:1433;databaseName=abhilash")
-	private String URL = "jdbc:sqlserver://spring-boot-sqlserver.database.windows.net:1433;database=spring-boot-sqlinstance";
+	private String URL = "jdbc:sqlserver://spring-boot-sqlserver2.database.windows.net:1433;database=spring-boot-sqlinstance";
 
 	// @Value("sa")
 	private String USERNAME = "abhilashmedi@spring-boot-sqlserver";
