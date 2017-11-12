@@ -1,13 +1,21 @@
 package com.example.demo;
 
+import java.io.File;
+import java.io.FileInputStream;
+
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.microsoft.azure.storage.CloudStorageAccount;
+import com.microsoft.azure.storage.blob.BlobContainerPermissions;
+import com.microsoft.azure.storage.blob.BlobContainerPublicAccessType;
+import com.microsoft.azure.storage.blob.CloudBlobClient;
+import com.microsoft.azure.storage.blob.CloudBlobContainer;
+import com.microsoft.azure.storage.blob.CloudBlockBlob;
 
 @SpringBootApplication
-@EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class })
 public class AzureBlobApplication {
 
 	public static void main(String[] args) {
@@ -15,29 +23,31 @@ public class AzureBlobApplication {
 	}
 }
 
-/*
- * @RequestMapping("/hell")
- * 
- * @ResponseBody public String h() {
- * 
- * try { CloudStorageAccount storageAccount =
- * CloudStorageAccount.parse(storageConnectionString); CloudBlobClient
- * blobClient = storageAccount.createCloudBlobClient(); CloudBlobContainer
- * container = blobClient.getContainerReference("mycontainer");
- * container.createIfNotExists(); BlobContainerPermissions containerPermissions
- * = new BlobContainerPermissions();
- * containerPermissions.setPublicAccess(BlobContainerPublicAccessType.CONTAINER)
- * ; container.uploadPermissions(containerPermissions);
- * 
- * final String filePath =
- * "H:\\E\\Dangal 2016 Hindi 720p Blu-Ray x264 AAC ESubs { TaRa }\\Dangal_Poster.jpg"
- * ;
- * 
- * CloudBlockBlob blob = container.getBlockBlobReference("myimage.jpg"); File
- * source = new File(filePath); blob.upload(new FileInputStream(source),
- * source.length());
- * 
- * } catch (Exception e) { e.printStackTrace(); }
- * 
- * return "hello"; }
- */
+
+
+
+/*@RequestMapping("/hell")
+@ResponseBody
+public String h() {
+
+	try {
+		CloudStorageAccount storageAccount = CloudStorageAccount.parse(storageConnectionString);
+		CloudBlobClient blobClient = storageAccount.createCloudBlobClient();
+		CloudBlobContainer container = blobClient.getContainerReference("mycontainer");
+		container.createIfNotExists();
+		BlobContainerPermissions containerPermissions = new BlobContainerPermissions();
+		containerPermissions.setPublicAccess(BlobContainerPublicAccessType.CONTAINER);
+		container.uploadPermissions(containerPermissions);
+
+		final String filePath = "H:\\E\\Dangal 2016 Hindi 720p Blu-Ray x264 AAC ESubs { TaRa }\\Dangal_Poster.jpg";
+
+		CloudBlockBlob blob = container.getBlockBlobReference("myimage.jpg");
+		File source = new File(filePath);
+		blob.upload(new FileInputStream(source), source.length());
+
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+
+	return "hello";
+}*/
